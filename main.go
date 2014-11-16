@@ -45,9 +45,9 @@ func main() {
 	log.Printf("Possible Jolokia port names: %v", opts.JolokiaPortNames)
 
 	config := client.Config{
-		Host:     "http://localhost:8080",
-		Username: "test",
-		Password: "password",
+		Host:     opts.KubernetesMaster,
+		Username: opts.KubernetesUsername,
+		Password: opts.KubernetesPassword,
 	}
 	client, err := client.New(&config)
 	if err != nil {
